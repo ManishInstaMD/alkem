@@ -1,142 +1,140 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Calciapt</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <style>
-        #wrapper {
-            width: 1920px;
-            height: 1200px;
-            position: relative;
-            background-size: 100%;
-            overflow: hidden;
-            margin: 0 auto;
-        }
+      #wrapper {
+        width: 1920px;
+        height: 1200px;
+        position: relative;
+        background-size: 100%;
+        overflow: hidden;
+        margin: 0 auto;
+      }
 
-        .page01 {
-            background: url(images/bg2.png);
-            background-size: contain;
-            width: 1920px;
-            height: 1200px;
-            position: absolute;
-            left: 0px;
-            top: 0px;
-        }
+      .page01 {
+        background: url(images/bg2.png);
+        background-size: contain;
+        width: 1920px;
+        height: 1200px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
 
-        .logo1 {
-            background: url(images/anti.png);
-            width: 15%;
-            height: 101%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            position: absolute;
-            top: 65px;
-            left: 76px;
-        }
+      .logo1 {
+        background: url(images/anti.png);
+        width: 15%;
+        height: 101%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 65px;
+        left: 76px;
+      }
 
-        .logo {
-            background: url(images/hanshake.png);
-            width: 37%;
-            height: 99%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            position: absolute;
-            top: 190px;
-            left: 100px;
-        }
+      .logo {
+        background: url(images/hanshake.png);
+        width: 37%;
+        height: 99%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 190px;
+        left: 100px;
+      }
 
-        .head_right_img {
-            background: url(images/thankyou.png);
-            width: 38%;
-            height: 102%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            position: absolute;
-            top: 179px;
-            right: 127px;
-        }
+      .head_right_img {
+        background: url(images/thankyou.png);
+        width: 38%;
+        height: 102%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 179px;
+        right: 127px;
+      }
 
-        .head_right1_img {
-            background: url(images/joining.png);
-            width: 37%;
-            height: 102%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            position: absolute;
-            top: 582px;
-            right: 140px;
-        }
+      .head_right1_img {
+        background: url(images/joining.png);
+        width: 37%;
+        height: 102%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 582px;
+        right: 140px;
+      }
 
-        .footer {
-            background: url(images/reference-button.png);
-            width: 10%;
-            height: 10%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            position: absolute;
-            bottom: 35px;
-            right: -18px;
-        }
+      .footer {
+        background: url(images/reference-button.png);
+        width: 10%;
+        height: 10%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 35px;
+        right: -18px;
+      }
 
-        .footer1 {
-            background: url(images/arrow_pre.webp);
-            width: 4%;
-            height: 7%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            position: absolute;
-            bottom: 45%;
-            left: 24px;
-            transform: rotate(180deg);
-        }
+      .footer1 {
+        background: url(images/arrow_pre.webp);
+        width: 4%;
+        height: 7%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 45%;
+        left: 24px;
+        transform: rotate(180deg);
+      }
 
-        .doctor-name {
-            position: absolute;
-            top: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 48px;
-            color: #000;
-            font-weight: bold;
-            font-family: sans-serif;
-        }
+      .doctor-name {
+        position: absolute;
+        top: 451px;
+        left: 73%;
+        transform: translateX(-50%);
+        font-size: 59px;
+        color: #d55d5d;
+        font-weight: bold;
+        font-family: sans-serif;
+      }
     </style>
 
     <div id="wrapper" class="main_wrap">
-        <div class="page01"></div>
-        <div class="logo1"></div>
-        <div class="logo"></div>
-        <div class="head_right_img"></div>
-        <div class="head_right1_img"></div>
+      <div class="page01"></div>
+      <div class="logo1"></div>
+      <div class="logo"></div>
+      <div class="head_right_img"></div>
+      <div class="head_right1_img"></div>
 
-        <!-- Doctor Name Display -->
-        <div id="user-name" class="doctor-name">Welcome, Doctor</div>
+      <!-- Doctor Name Display -->
+      <div id="user-name" class="doctor-name">Welcome, Doctor</div>
 
-        <div class="footer1"></div>
-        <div class="footer" onclick="openModal()"></div>
+      <div class="footer1"></div>
+      <div class="footer" onclick="openModal()"></div>
     </div>
 
     <script>
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
 
-        const userName = getQueryParam("doctor_name"); // get name from URL
-        if (userName) {
-            document.getElementById("user-name").innerText = `${decodeURIComponent(userName)}`;
-        }
+      const userName = getQueryParam("doctor_name"); // get name from URL
+      if (userName) {
+        document.getElementById("user-name").innerText = `Dr. ${decodeURIComponent(
+          userName
+        )}`;
+      }
 
-        function openModal() {
-            alert("Reference modal triggered!");
-        }
+      function openModal() {
+        alert("Reference modal triggered!");
+      }
     </script>
-
-</body>
-
+  </body>
 </html>
