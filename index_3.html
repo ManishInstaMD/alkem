@@ -65,12 +65,12 @@
 
       .head_right1_img {
         background: url(images/joinus.png);
-        width: 30%;
+        width: 34%;
         height: 100%;
         background-size: contain;
         background-repeat: no-repeat;
         position: absolute;
-        top: 548px;
+        top: 512px;
         right: 100px;
       }
 
@@ -170,13 +170,65 @@
       #doctorForm input:focus {
         border-color: #007bff;
       }
+
+      .doctors-count-box {
+        position: absolute;
+        top: 180px;
+        right: 82px;
+        width: 565px;
+        padding: 20px 24px;
+        background-color: white;
+        border: 2px solid #007bff;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        font-family: "Segoe UI", sans-serif;
+        text-align: center;
+        z-index: 999;
+      }
+
+      .doctors-count-box .count {
+        font-size: 48px;
+        font-weight: bold;
+        color: #f4751e;
+        margin-bottom: 10px;
+      }
+
+      .doctors-count-box .subtitle {
+        font-size: 24px;
+        color: #333;
+        font-weight: 600;
+      }
+
+      .doctors-count-box .india {
+        font-size: 28px;
+        font-weight: bold;
+        margin: 8px 0;
+      }
+
+      .doctors-count-box .india-text {
+        color: #0047ab;
+        margin: 0 8px;
+      }
+
+      .doctors-count-box .footer-text {
+        font-size: 20px;
+        color: #444;
+        margin-top: 8px;
+      }
     </style>
 
     <div id="wrapper" class="main_wrap">
       <div class="page01"></div>
       <div class="logo"></div>
       <div class="logo1"></div>
-      <div class="head_right_img"></div>
+      <div class="doctors-count-box" id="doctorsCountBox">
+        <div class="count">1000+</div>
+        <div class="subtitle">Doctors across</div>
+        <div class="india"><span class="india-text">INDIA</span></div>
+        <div class="footer-text">
+          have participated for the novel initiative
+        </div>
+      </div>
       <div class="head_right1_img"></div>
 
       <!-- Doctor Form -->
@@ -213,33 +265,28 @@
     <script>
       function submitForm(event) {
         if (event) event.preventDefault();
-
         const name = document.getElementById("doctorName").value.trim();
         const email = document.getElementById("doctorEmail").value.trim();
-
         if (!name || !email) {
           alert("Please enter both name and email.");
           return;
         }
 
-        // Replace this URL with your actual API endpoint
         const apiUrl = "https://crm.instamd.co.in/api/createdoctor";
-
         fetch(apiUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name, email }),
         })
-          .then((response) => {
-            if (!response.ok) throw new Error("Network response error");
-            return response.json();
-          })
+          .then((res) => res.json())
           .then((data) => {
             const doctor = data.data;
-            window.location.href = `index_4.html?user_id=${doctor.id}&doctor_name=${encodeURIComponent(doctor.name)}`;
+            window.location.href = `index_4.html?user_id=${
+              doctor.id
+            }&doctor_name=${encodeURIComponent(doctor.name)}`;
           })
-          .catch((error) => {
-            console.error("Submission error:", error);
+          .catch((err) => {
+            console.error("Submission error:", err);
             alert("Error submitting form. Please try again.");
           });
       }
@@ -247,6 +294,24 @@
       function openModal() {
         alert("Reference modal trigger (add implementation)");
       }
+
+      // ✅ Fetch total doctor count
+      function loadDoctorCount() {
+        const countBox = document.getElementById("doctorsCountBox");
+
+        fetch("https://crm.instamd.co.in/api/docTotal")
+          .then((res) => res.json())
+          .then((data) => {
+            const total = data.total || 1000; // fallback
+            countBox.querySelector(".count").textContent = `${total}+`;
+          })
+          .catch((err) => {
+            console.error("Error fetching count:", err);
+            countBox.querySelector(".count").textContent = "1000+";
+          });
+      }
+
+      window.onload = loadDoctorCount;
     </script>
   </body>
 </html>
