@@ -1,28 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Calciapt</title>
-</head>
+  </head>
 
-<body>
-
-<style>
-    .d-none {
+  <body>
+    <style>
+      .d-none {
         display: none;
-    }
+      }
 
-    #wrapper {
+      #wrapper {
         width: 1920px;
         height: 1200px;
         position: relative;
         background-size: 100%;
         overflow: hidden;
         margin: 0 auto;
-    }
+      }
 
-    .page01 {
+      .page01 {
         background: url(images/bg2.png);
         background-size: contain;
         width: 1920px;
@@ -30,9 +28,9 @@
         position: absolute;
         left: 0px;
         top: 0px;
-    }
+      }
 
-    .logo {
+      .logo {
         background: url(images/anti.png);
         width: 15%;
         height: 101%;
@@ -41,9 +39,9 @@
         position: absolute;
         top: 65px;
         left: 76px;
-    }
+      }
 
-    .logo1 {
+      .logo1 {
         background: url(images/family.png);
         width: 34%;
         height: 101%;
@@ -52,9 +50,9 @@
         position: absolute;
         top: 296px;
         left: 180px;
-    }
+      }
 
-    .head_right_img {
+      .head_right_img {
         background: url(images/across.png);
         width: 35%;
         height: 100%;
@@ -63,9 +61,9 @@
         position: absolute;
         top: 166px;
         right: 90px;
-    }
+      }
 
-    .head_right1_img {
+      .head_right1_img {
         background: url(images/joinus.png);
         width: 30%;
         height: 100%;
@@ -74,9 +72,9 @@
         position: absolute;
         top: 548px;
         right: 100px;
-    }
+      }
 
-    .curapholic {
+      .curapholic {
         background: url(images/calciapt-slide-4_5-1.png);
         width: 45%;
         height: 60%;
@@ -85,9 +83,9 @@
         position: absolute;
         bottom: 450px;
         left: 578px;
-    }
+      }
 
-    .curapholic2 {
+      .curapholic2 {
         background: url(images/calciapt-slide-4-2.png);
         width: 47%;
         height: 50%;
@@ -96,9 +94,9 @@
         position: absolute;
         bottom: 123px;
         right: 1000px;
-    }
+      }
 
-    .curapholic3 {
+      .curapholic3 {
         background: url(images/calciapt-slide-4-3.png);
         width: 47%;
         height: 50%;
@@ -107,9 +105,9 @@
         position: absolute;
         bottom: 123px;
         right: 6px;
-    }
+      }
 
-    .footer {
+      .footer {
         background: url(images/reference-button.png);
         width: 10%;
         height: 10%;
@@ -119,9 +117,9 @@
         bottom: 35px;
         right: -18px;
         cursor: pointer;
-    }
+      }
 
-    .footer1 {
+      .footer1 {
         background: url(images/arrow_pre.webp);
         width: 4%;
         height: 7%;
@@ -131,9 +129,9 @@
         bottom: 45%;
         left: 24px;
         transform: rotate(180deg);
-    }
+      }
 
-    .footer2 {
+      .footer2 {
         background: url(images/nextButton.png);
         width: 12%;
         height: 5%;
@@ -143,104 +141,112 @@
         bottom: 13%;
         right: 319px;
         cursor: pointer;
-    }
+      }
 
-  #doctorForm {
-    position: absolute;
-    top: 660px;
-    right: 140px;
-    width: 450px;
-    z-index: 9999;
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 24px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
+      #doctorForm {
+        position: absolute;
+        top: 660px;
+        right: 140px;
+        width: 450px;
+        z-index: 9999;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 24px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
 
-#doctorForm input {
-    width: 95%;
-    padding: 14px;
-    margin-bottom: 16px;
-    font-size: 18px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    outline: none;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
-    transition: border-color 0.2s ease;
-}
+      #doctorForm input {
+        width: 95%;
+        padding: 14px;
+        margin-bottom: 16px;
+        font-size: 18px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        outline: none;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+        transition: border-color 0.2s ease;
+      }
 
-#doctorForm input:focus {
-    border-color: #007bff;
-}
+      #doctorForm input:focus {
+        border-color: #007bff;
+      }
+    </style>
 
-</style>
+    <div id="wrapper" class="main_wrap">
+      <div class="page01"></div>
+      <div class="logo"></div>
+      <div class="logo1"></div>
+      <div class="head_right_img"></div>
+      <div class="head_right1_img"></div>
 
-<div id="wrapper" class="main_wrap">
+      <!-- Doctor Form -->
+      <form id="doctorForm" onsubmit="submitForm(event)">
+        <input
+          type="text"
+          id="doctorName"
+          name="doctorName"
+          placeholder="Doctor's Name"
+          required
+        />
+        <input
+          type="email"
+          id="doctorEmail"
+          name="doctorEmail"
+          placeholder="Doctor's Email"
+          required
+        />
+      </form>
 
-    <div class="page01"></div>
-    <div class="logo"></div>
-    <div class="logo1"></div>
-    <div class="head_right_img"></div>
-    <div class="head_right1_img"></div>
+      <div class="curapholic"></div>
+      <div class="curapholic2"></div>
+      <div class="curapholic3"></div>
 
-    <!-- Doctor Form -->
-    <form id="doctorForm" onsubmit="submitForm(event)">
-        <input type="text" id="doctorName" name="doctorName" placeholder="Doctor's Name" required />
-        <input type="email" id="doctorEmail" name="doctorEmail" placeholder="Doctor's Email" required />
-    </form>
-
-    <div class="curapholic"></div>
-    <div class="curapholic2"></div>
-    <div class="curapholic3"></div>
-
-    <a href="index_2.html">
+      <a href="index_2.html">
         <div class="footer1"></div>
-    </a>
+      </a>
 
-    <!-- Trigger form submit -->
-    <div class="footer2" onclick="submitForm(event)"></div>
-    <div class="footer" onclick="openModal()"></div>
-</div>
+      <!-- Trigger form submit -->
+      <div class="footer2" onclick="submitForm(event)"></div>
+      <div class="footer" onclick="openModal()"></div>
+    </div>
 
-<script>
-    function submitForm(event) {
+    <script>
+      function submitForm(event) {
         if (event) event.preventDefault();
 
         const name = document.getElementById("doctorName").value.trim();
         const email = document.getElementById("doctorEmail").value.trim();
 
         if (!name || !email) {
-            alert("Please enter both name and email.");
-            return;
+          alert("Please enter both name and email.");
+          return;
         }
 
         // Replace this URL with your actual API endpoint
         const apiUrl = "https://crm.instamd.co.in/api/createdoctor";
 
         fetch(apiUrl, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name, email })
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email }),
         })
-        .then(response => {
+          .then((response) => {
             if (!response.ok) throw new Error("Network response error");
             return response.json();
-        })
-        .then(data => {
-            // Redirect to next page with name
-            window.location.href = `index_4.html?user_id=1&doctor_name=${encodeURIComponent(data.name)}`;
-        })
-        .catch(error => {
+          })
+          .then((data) => {
+            const doctor = data.data;
+            window.location.href = `index_4.html?user_id=${doctor.id}&doctor_name=${encodeURIComponent(doctor.name)}`;
+          })
+          .catch((error) => {
             console.error("Submission error:", error);
             alert("Error submitting form. Please try again.");
-        });
-    }
+          });
+      }
 
-    function openModal() {
+      function openModal() {
         alert("Reference modal trigger (add implementation)");
-    }
-</script>
-
-</body>
-
+      }
+    </script>
+  </body>
 </html>
