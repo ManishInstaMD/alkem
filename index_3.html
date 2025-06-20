@@ -272,7 +272,7 @@
           return;
         }
 
-        const apiUrl = "https://crm.instamd.co.in/api/createdoctor";
+        const apiUrl = "https://crm.instamd.co.in/api/alkem/createdoctor";
         fetch(apiUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -299,7 +299,7 @@
       function loadDoctorCount() {
         const countBox = document.getElementById("doctorsCountBox");
 
-        fetch("https://crm.instamd.co.in/api/docTotal")
+        fetch("https://crm.instamd.co.in/api/alkem/usercount")
           .then((res) => res.json())
           .then((data) => {
             const total = data.total || 1000; // fallback
