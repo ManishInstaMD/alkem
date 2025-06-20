@@ -1,13 +1,8 @@
 <!doctype html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <title>Calciapt</title>
-</head>
-
-<body>
-
     <style>
         .d-none {
             display: none;
@@ -22,7 +17,6 @@
             margin: 0 auto;
         }
 
-
         .page01 {
             background: url(images/bg2.png);
             background-size: contain;
@@ -33,91 +27,72 @@
             top: 0px;
         }
 
-         .logo {
-                background: url(images/anti.png);
-    width: 15%;
-    height: 101%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 65px;
-    left: 76px;
-        } 
-
-        .logo1 {
-               background: url(images/red.png);
-    width: 34%;
-    height: 101%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 296px;
-    left: 180px;
-        } 
-
-
-         .head_right_img {
-                background: url(images/joinHand.png);
-    width: 35%;
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 166px;
-    right: 90px;
-        }  
-
-
-
-
-        .head_right1_img {
-                background: url(images/record.png);
-    width: 30%;
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 548px;
-    right: 100px;
-        }  
-
-
-
-        .head_right2_img {
-                   background: url(images/bookrecord.png);
-    width: 15%;
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 638px;
-    right: 247px;
-        }  
-
-
-        
-        .head_right3_img {
-                     background: url(images/efforts.png);
-    width: 34%;
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 831px;
-    right: 128px;
-        }  
-
-
-     /* .forrin_2 {
-            background: url(images/Curafolic-slide-7-pic.png);
-            width: 22%;
-            height: 60%;
+        .logo {
+            background: url(images/anti.png);
+            width: 15%;
+            height: 101%;
             background-size: contain;
             background-repeat: no-repeat;
             position: absolute;
-            bottom: 278px;
-            left: 1468px;
-        } */
+            top: 65px;
+            left: 76px;
+        } 
+
+        .logo1 {
+            background: url(images/red.png);
+            width: 34%;
+            height: 101%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 296px;
+            left: 180px;
+            cursor: pointer;
+        } 
+
+        .head_right_img {
+            background: url(images/joinHand.png);
+            width: 35%;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 166px;
+            right: 90px;
+        }  
+
+        .head_right1_img {
+            background: url(images/record.png);
+            width: 30%;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 548px;
+            right: 100px;
+        }  
+
+        .head_right2_img {
+            background: url(images/bookrecord.png);
+            width: 15%;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 638px;
+            right: 247px;
+        }  
+
+        .head_right3_img {
+            background: url(images/efforts.png);
+            width: 34%;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 831px;
+            right: 128px;
+        }  
 
         .curapholic {
             background: url(images/calciapt-slide-3-2.png);
@@ -128,23 +103,7 @@
             position: absolute;
             bottom: 170px;
             left: 455px;
-
         }
-
-
-        /* .curapholic2 {
-            background: url(images/Curafolic-slide-7-3.png);
-            width: 26%;
-            height: 50%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            position: absolute;
-            bottom: 115px;
-            right: 410px;
-
-        } */
- 
-
 
         .footer {
             background: url(images/reference-button.png);
@@ -170,14 +129,14 @@
         }
 
         .footer2 {
-               background: url(images/nextButton.png);
-    width: 12%;
-    height: 5%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    bottom: 13%;
-    right: 319px;
+            background: url(images/nextButton.png);
+            width: 12%;
+            height: 5%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            bottom: 13%;
+            right: 319px;
         }
 
         .popup {
@@ -187,7 +146,6 @@
             background-repeat: no-repeat;
             position: absolute;
             right: 395px;
-
         }
 
         .popup img {
@@ -206,7 +164,6 @@
             background-color: rgba(14, 13, 13, 0.7);
             justify-content: center;
             align-items: center;
-
         }
 
         .close {
@@ -218,28 +175,38 @@
             cursor: pointer;
         }
     </style>
+</head>
 
-    <div id="wrapper" class="main_wrap  ">
-
+<body>
+    <div id="wrapper" class="main_wrap">
         <div class="page01"></div>
         <div class="logo"></div>
-        <div class="logo1"></div>
+        <div class="logo1" id="logo1"></div>
         <div class="head_right_img"></div>
         <div class="head_right1_img"></div>
         <div class="head_right2_img"></div>
         <div class="head_right3_img"></div>
-        <div class="forrin_2"></div>
         <div class="curapholic"></div>
-        <div class="curapholic2"></div>
         <a href="index_1.html">
             <div class="footer1"></div>
         </a>
-        <a href="index_3.html"><!doctype html>
-
+        <a href="index_3.html">
             <div class="footer2"></div>
         </a>
-        <!-- <div class="footer" onclick="openModal()"></div> -->
         
-</body>
+        <script>
+            const logo1 = document.getElementById("logo1");
+            let isOriginal = true;
 
+            logo1.addEventListener("click", function() {
+                if (isOriginal) {
+                    this.style.backgroundImage = "url('images/green.png')";
+                } else {
+                    this.style.backgroundImage = "url('images/red.png')";
+                }
+                isOriginal = !isOriginal;
+            });
+        </script>
+    </div>
+</body>
 </html>
